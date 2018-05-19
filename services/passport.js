@@ -22,26 +22,17 @@ passport.use(
         {
             clientID: keys.googleClientID,
             clientSecret: keys.googleClientSecret,
-            callbackURL: '/auth/google/callback',   // rel path. Defaults to http
+            callbackURL: '/auth/google/callback',
             proxy: true
         }, 
-        (accessToken, refreshToken, profile, done) => {
-            // console.log('access token', accessToken);
-            // console.log('refresh token', refreshToken);
-            // console.log('profile', profile);
-
-            User.findOne({ googleId: profile.id })      // search for user. Async 
-            .then((existingUser) => {                   // promise
-                if (existingUser){
-                    // have record with given profile Id - user exists
-                    done(null, existingUser);   // done(error, user_record)
-                } else {
-                    // user doesn't exist - create new user
-                    new User({ googleId: profile.id })  // Mongoose model instance
-                    .save()                             // save new user record
-                    .then(user => done(null, user));    // callback another model instance. Use the promise callback by convention.
-                }
-            });
+        async (accessToken, refreshToken, profile, done) => {
+            const existingUser = await User.findOne({ googleId: profile.id })
+            if (existingUser){
+                return done(null, existingUser);
+            } 
+            
+            const user = await new User({ googleId: profile.id }).save()
+            done(null, user);
         }
     )
 );
