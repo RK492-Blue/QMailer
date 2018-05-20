@@ -33,7 +33,7 @@ const store = createStore(
 
 
 ReactDOM.render(
-// reference on ReacrDOM: https://reactjs.org/docs/react-dom.html
+// reference on ReactDOM: https://reactjs.org/docs/react-dom.html
 // 2 arguments - What and  where to render. Refer notes-client.txt
 // Creates redux store at the top level of the application
 // Refer react-redux.png diagram
@@ -45,3 +45,6 @@ ReactDOM.render(
     </Provider>, 
     document.querySelector('#root')
 );  
+
+// console.log('Strip key: ', process.env.REACT_APP_STRIPE_KEY);
+// console.log('Environment is: ', process.env.NODE_ENV);
