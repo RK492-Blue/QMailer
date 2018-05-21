@@ -4,9 +4,9 @@ const Landing = () => {
     return(
         <div style = {{ textAlign: 'center' }}>
             <h1>
-                Emaily!
+                Posterize Main Page
             </h1>
-            Collect feedback from your users
+            Create a poster
         </div>
     );
 };
