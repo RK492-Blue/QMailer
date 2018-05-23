@@ -1,16 +1,16 @@
-#Q-Mailer
+# Q-Mailer
 
-##Introduction
+## Introduction
 Q-Mailer is cloud-based survey utility. Users generate their own customised questionnaire which Q-Mailer sends out, then generates a report of the responses.
 
 
-##Features
+## Features
 oAuth authentication to google+
 Payment with Stripe
 Survey emails sent using sendgrid
 
 
-##Built with
+## Built with
 node.js
 React
 Redux
