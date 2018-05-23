@@ -19,6 +19,9 @@ import reduxThunk from 'redux-thunk';
 import App from './components/App';
 import reducers from './reducers';
 
+import axios from 'axios';
+window.axios = axios;
+
 
 // create the Redux store
 // https://redux.js.org/api-reference/createstore
