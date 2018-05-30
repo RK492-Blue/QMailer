@@ -6,7 +6,8 @@ const Landing = () => {
             <h1>
                 Welcome to Q-Mailer
             </h1>
-            A Survey Web Application
+            <img src="QMailerIcon.png" alt="Q-Mailer"/>
+            <p>A Survey Web Application</p>
         </div>
     );
 };
