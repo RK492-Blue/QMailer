@@ -22,7 +22,6 @@ import reducers from './reducers';
 import axios from 'axios';
 window.axios = axios;
 
-
 // create the Redux store
 // https://redux.js.org/api-reference/createstore
 // createStore(reducer, initial_state, enhancers-ie.MiddleWare)
